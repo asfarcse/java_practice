@@ -5,10 +5,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 class AtomicCounter {
 	
 //	AtomicInteger count = new AtomicInteger();
-	volatile Integer count=0;
+	Integer count=0;
 	
 	/**Atomic increment operation*/
-	public void increment () {
+	public synchronized void increment () {
 //		count.incrementAndGet();
 		count++;
 	}

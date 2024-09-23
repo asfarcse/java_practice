@@ -2,7 +2,7 @@
 
 
 class Example {
-	private static Example example;
+	private static Example example ;
 	
 	private Example() {}
 	

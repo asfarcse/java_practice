@@ -7,7 +7,7 @@ import java.util.Optional;
 public class AvrgOfNumbers {
 	public static void main(String[] args) {
 		List<Integer> intList = Arrays.asList(1,2,3,4,5);
-		Optional<Integer> average = intList.stream().reduce((a,b)->a+b);
-		System.out.println("average:::::"+average.get());
+		Double average = intList.stream().mapToInt(p->p).average().getAsDouble();
+		System.out.println("average:::::"+average);
 	}
 }

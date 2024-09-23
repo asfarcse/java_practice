@@ -13,6 +13,7 @@ class Service implements Runnable {
 	@Override
 	public void run() {
 		System.out.println(i+" ");
+		System.out.println("Thread Name::::"+Thread.currentThread().getName());
 		try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();} 
 	}
 	
@@ -20,7 +21,7 @@ class Service implements Runnable {
 
 public class ExecutorExample {
 	public static void main(String[] args) throws InterruptedException {
-		ExecutorService es = Executors.newFixedThreadPool(5);
+		ExecutorService es = Executors.newFixedThreadPool(3);
 		System.out.println("startTime:::"+new Date());
 		for(int i=0;i<25;i++) {
 			es.execute(new Service(i));

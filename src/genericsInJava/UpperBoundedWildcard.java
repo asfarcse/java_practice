@@ -13,9 +13,6 @@ class UpperBoundedWildcard {
 		List<Double> list2 = Arrays.asList(4.1, 5.1, 6.1);
 		System.out.print("Total sum is:" + sum(list2));
 		
-//		Object obj = null;
-//		System.out.println();
-//		System.out.println(obj);
 	}
 
 	private static double sum(List<? extends Number> list) {

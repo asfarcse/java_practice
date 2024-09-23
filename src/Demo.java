@@ -1,76 +1,110 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Demo {
+//Input: nums = [1,2,3,4]
+//Output: [24,12,8,6]
+class Demo {
+	public static void main(String[] args) {
+//		productExceptSelf(arr);
 
-    /**
-     * Don't change this method.
-     */
-    public static int getSum(List<Integer> value) {
-        int sum = 0;
-        for (int i : value) {
-            sum += i;
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return sum;
-    }
+//		int[] arr1 = { 1, 1, 2, 3, 4, 5, 6 };
+//		int[] arr2 = { 2, 3, 4, 4, 5 };
+//
+//		mergeTwoSortedArray(arr1, arr2);
+//		
+//		
+//		String str = "my name is asfar";
+//		for(int i=0;i<str.length();i++) {
+//			System.out.println(str.charAt(i));
+//		}
+		
+		int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		int sum=0;
+		int max=arr[0];
+		
+		for(int i=0;i<arr.length;i++) {
+			sum += arr[i];
+			max = Math.max(max, sum);
+			if(sum < 0) {
+				sum=0;
+			}
+		}
+		
+		System.out.println(max);
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
-        List<Integer> list = IntStream.rangeClosed(1, 10000)
-                .boxed()
-                .map(n -> ThreadLocalRandom.current().nextInt(0, 11))
-                .collect(Collectors.toList());
+	}
 
-        long start1 = System.currentTimeMillis();
+	private static void mergeTwoSortedArray(int[] arr1, int[] arr2) {
+		
+		
+		int i=0;
+		int j=0;
+		List<Integer> list = new ArrayList<>();
+		
+		while(i<arr1.length && j<arr2.length) {
+			if(arr1[i] <= arr2[j]) {
+				if(list.isEmpty() || arr1[i] != list.get(list.size()-1)) {
+					list.add(arr1[i]);
+				}
+				i++;
+			} else if(arr2[j] <= arr1[i]) {
+				if(list.isEmpty() || arr2[j] != list.get(list.size()-1)) {
+					list.add(arr2[j]);
+				}
+				j++;
+			}
+		}
+		
+		while(i < arr1.length) {
+			if(list.isEmpty() || arr1[i] != list.get(list.size()-1)) {
+				list.add(arr1[i]);
+			}
+			i++;
+		}
+		
+		while(j < arr2.length) {
+			if(list.isEmpty() || arr2[j] != list.get(list.size()-1)) {
+				list.add(arr2[j]);
+			}
+			j++;
+		}
+		
+		System.out.println(list);
+	}
 
-        System.out.println(list.size());
+	private static void productExceptSelf(int[] arr) {
+		int product = 1;
+		int count0 = 0;
+		for (int num : arr) {
+			if (num != 0) {
+				product *= num;
+			} else {
+				count0++;
+			}
+		}
+		List<Integer> list = new ArrayList<>();
+		for (int num : arr) {
+			if (count0 > 1) {
+				list.add(0);
+			} else if (count0 == 1) {
+				if (num == 0) {
+					list.add(product);
+				} else {
+					list.add(0);
+				}
+			} else {
+				list.add(product / num);
+			}
+		}
 
-        List<Integer> list1 = list.stream().limit(1000).collect(Collectors.toList());
-        List<Integer> list2 = list.stream().skip(1000).limit(1000).collect(Collectors.toList());
-        List<Integer> list3 = list.stream().skip(2000).limit(1000).collect(Collectors.toList());
-        List<Integer> list4 = list.stream().skip(3000).limit(1000).collect(Collectors.toList());
-        List<Integer> list5 = list.stream().skip(4000).limit(1000).collect(Collectors.toList());
-        List<Integer> list6 = list.stream().skip(5000).limit(1000).collect(Collectors.toList());
-        List<Integer> list7 = list.stream().skip(6000).limit(1000).collect(Collectors.toList());
-        List<Integer> list8 = list.stream().skip(7000).limit(1000).collect(Collectors.toList());
-        List<Integer> list9 = list.stream().skip(8000).limit(1000).collect(Collectors.toList());
-        List<Integer> list10 = list.stream().skip(9000).limit(1000).collect(Collectors.toList());
+		System.out.println(Arrays.toString(list.stream().toArray()));
+	}
 
-        int summ = 0;
-
-        ExecutorService es = Executors.newFixedThreadPool(10);
-
-        Callable<Integer> call1 = () -> Hii.getSum(list1);
-        Callable<Integer> call2 = () -> Hii.getSum(list2);
-        Callable<Integer> call3 = () -> Hii.getSum(list3);
-        Callable<Integer> call4 = () -> Hii.getSum(list4);
-        Callable<Integer> call5 = () -> Hii.getSum(list5);
-        Callable<Integer> call6 = () -> Hii.getSum(list6);
-        Callable<Integer> call7 = () -> Hii.getSum(list7);
-        Callable<Integer> call8 = () -> Hii.getSum(list8);
-        Callable<Integer> call9 = () -> Hii.getSum(list9);
-        Callable<Integer> call10 = () -> Hii.getSum(list10);
-
-        List<Callable<Integer>> callables = List.of(call1, call2, call3, call4, call5, call6, call7, call8, call9, call10);
-        List<Future<Integer>> futures = es.invokeAll(callables);
-
-        for (Future<Integer> future : futures) {
-            summ += future.get();
-        }
-
-        es.shutdown();
-
-        System.out.println("Executed in : " + (System.currentTimeMillis() - start1) + ", sum is : " + summ);
-    }
 }

@@ -12,10 +12,10 @@ class UnboundedWildcard {
 
 		// Double list
 		List<Double> list2 = Arrays.asList(1.1, 2.2, 3.3);
-		
+
 		List<Number> list3 = Arrays.asList(4, 5, 6, 7);
-		
-		List<String> list4 = Arrays.asList("mohd","asfar","Azmi");
+
+		List<String> list4 = Arrays.asList("mohd", "asfar", "Azmi");
 
 		printlist(list1);
 		printlist(list2);
@@ -24,7 +24,8 @@ class UnboundedWildcard {
 	}
 
 	private static void printlist(List<?> list) {
-
-		System.out.println(list);
+		for (Object obj : list) {
+			System.out.println(obj);
+		}
 	}
 }

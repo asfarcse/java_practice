@@ -15,16 +15,16 @@ public class ShortCircuitOperations {
 		memberNames.add("Shree");
 		memberNames.add("Dheeraj");
 		memberNames.add("Lokesh");
-		memberNames.add("Manish");
+		memberNames.add("Lanish");
 		memberNames.add("Ankita");
 		memberNames.add("Tushar");
 		
 		boolean matched = memberNames.stream()
-		        .anyMatch((s) -> s.startsWith("A"));
+		        .anyMatch(s-> s.startsWith("A"));
 		System.out.println(matched);
 		
 		String firstMatchedName = memberNames.stream()
-	            .filter((s) -> s.startsWith("L"))
+	            .filter(s-> s.startsWith("L"))
 	            .findFirst()
 	            .get();
 		System.out.println(firstMatchedName);

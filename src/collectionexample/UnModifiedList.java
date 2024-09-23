@@ -18,5 +18,16 @@ public class UnModifiedList {
 		unmodifiableList.add(101);
 		
 		System.out.println(unmodifiableList);
+		
+		
+		/****/
+		List<String> originalList = new ArrayList<>(Arrays.asList("a", "b", "c"));
+		List<String> unmodifiableList1 = Collections.unmodifiableList(originalList);
+//		unmodifiableList1.add("d"); // Throws UnsupportedOperationException
+		originalList.add("d"); // This change will be reflected in unmodifiableList
+		
+		System.out.println("originalList::::::"+originalList.hashCode());
+		System.out.println("unmodifiableList1::::::"+unmodifiableList1.hashCode());
+
 	}
 }

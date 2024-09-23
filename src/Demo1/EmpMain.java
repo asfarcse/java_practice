@@ -16,7 +16,7 @@ public class EmpMain {
 		empList.add(new Employee(2,"seema",null));
 		
 		Map<String, String> employeeSalaryMap = empList.stream()
-	            .collect(Collectors.toMap(Employee::getName,ppp -> ppp.getSalary() == null ? "":ppp.getSalary()));
+	            .collect(Collectors.toMap(Employee::getName,ppp -> ppp.getSalary() == null ? "$":ppp.getSalary()));
 		System.out.println(employeeSalaryMap);
 		employeeSalaryMap.entrySet();
 		

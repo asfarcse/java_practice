@@ -1,17 +1,37 @@
 package arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //Write a Java program to find the missing number in an array of integers from 1 to n
 public class FindMissingNumber {
 	public static void main(String[] args) {
-		int[] arr = {1, 2, 5, 3,6, 7, 8};
+		int[] arr = {1,2,5,3,6,8};
 //		System.out.println(getMissingNumber(arr, 8));
 		sortArray(arr);
 		System.out.println(Arrays.toString(arr));
 		System.out.println(getMissingNumber(arr));
+		System.out.println(getMissingUsingHashing(arr));
 	}
 	
+	private static List<Integer> getMissingUsingHashing(int[] arr) {
+		int max = Arrays.stream(arr).max().getAsInt();
+		List<Integer> returnList = new ArrayList<>();
+		int[] hashArr = new int[max];
+		
+		for(int i=0;i<arr.length-1;i++) {
+			hashArr[arr[i]]++;
+		}
+		
+		for(int i=1;i<hashArr.length;i++) {
+			if(hashArr[i] == 0) {
+				returnList.add(i);
+			}
+		}
+		return returnList;
+	}
+
 	/**no need to sort using this technique*/
 	public static int getMissingNumber(int[] arr) {
 		int totalSum = 0;

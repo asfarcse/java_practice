@@ -26,14 +26,11 @@ class Cat extends Animal {
 public class Main {
  public static void main(String[] args) {
      Animal animal = new Animal();
-     Animal dog = new Animal();
+     Animal dog = new Dog();
      Animal cat = new Cat();
      
      animal.makeSound(); // The animal makes a sound
      dog.makeSound(); // The dog barks
      cat.makeSound(); // The cat meows
  }
- 
- void add (int a,int a)
- 
 }

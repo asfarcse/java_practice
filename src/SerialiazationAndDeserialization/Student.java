@@ -7,12 +7,12 @@ public class Student implements Serializable,Cloneable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	private int id;
 	private String name;
 	private String email;
-	private String demo;
+//	private String demo;
 	transient private String address;
 	public String hii;
 	
@@ -79,22 +79,22 @@ public class Student implements Serializable,Cloneable{
 	
 	
 //	
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Student other = (Student) obj;
-//		return Objects.equals(email, other.email) && id == other.id && Objects.equals(name, other.name);
-//	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return Objects.equals(email, other.email) && id == other.id && Objects.equals(name, other.name);
+	}
 
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(email, id, name);
-//	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, id, name);
+	}
 	
 	
 }

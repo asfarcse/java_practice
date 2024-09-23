@@ -11,11 +11,23 @@ public class CheckElement {
 	}
 	
 	public static void findElement(int[] arr,int element) {
-		List<Integer> intList = Arrays.stream(arr).boxed().collect(Collectors.toList());
-		if(intList.contains(element)) {
-			System.out.println("Element is present...");
-		} else {
-			System.out.println("Element is not present...");
+		
+		for(Integer num:arr) {
+			if(num != element) {
+				continue;
+			} else {
+				System.out.println("present");
+				return;
+			}
 		}
+		
+		System.out.println("not present");
+		
+//		List<Integer> intList = Arrays.stream(arr).boxed().collect(Collectors.toList());
+//		if(intList.contains(element)) {
+//			System.out.println("Element is present...");
+//		} else {
+//			System.out.println("Element is not present...");
+//		}
 	}
 }

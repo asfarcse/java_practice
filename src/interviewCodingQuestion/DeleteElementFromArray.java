@@ -10,7 +10,7 @@ public class DeleteElementFromArray {
 	}
 	
 	public static int[] removeElement(int[] arr, int target) {
-		System.out.println(arr.length);
+//		System.out.println(arr.length);
 		int count = 0;
 		for(Integer num:arr) {
 			if(num == target)

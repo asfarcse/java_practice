@@ -14,6 +14,8 @@ public class ReduceExample {
 		System.out.println(result);
 		
 		int sum = numList.stream().mapToInt(p->p).sum();
+		Integer sum1 = numList.stream().reduce((a,b)-> a+b).get();
 		System.out.println(sum);
+		System.out.println(sum1);
 	}
 }

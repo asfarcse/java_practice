@@ -1,9 +1,9 @@
 package leetcode;
 
-class Problem1 {
+class TwoSum1 {
     public static void main(String args[]) {
         int[] arr = {2,7,11,15};
-        Problem1 s = new Problem1();
+        TwoSum1 s = new TwoSum1();
         System.out.println(s.twoSum(arr,9)[0]+" "+s.twoSum(arr,9)[1]);
     }
 

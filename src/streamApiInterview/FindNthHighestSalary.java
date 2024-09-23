@@ -35,7 +35,7 @@ class Worker {
 
 public class FindNthHighestSalary {
 	public static void main(String[] args) {
-		int input = 3;
+		int input = 2;
 		List<Worker> workerList = Arrays.asList(new Worker("asfar",1000),
 												new Worker("moazzam",500),
 												new Worker("mehdi",1500));

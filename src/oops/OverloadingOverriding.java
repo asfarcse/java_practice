@@ -13,10 +13,12 @@ class Calculator {
 
 class ScientificCalculator extends Calculator {
 	
+	@Override
 	public int add(int x,int y) {
 		return x+y+2;
 	}
 	
+	@Override
 	public double add(double x,double y) {
 		return x+y+2.0;
 	}

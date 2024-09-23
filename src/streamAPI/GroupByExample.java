@@ -53,12 +53,12 @@ public class GroupByExample {
 											   new Employee(2, "moazzam", 40),
 											   new Employee(3, "mehdi", 30));
 		
-//		Map<Integer, List<Employee>> collect = .stream().collect(Collectors.groupingBy(emp->emp.getAge()));
-//		System.out.println(collect);
+		Map<Integer, List<Employee>> collect = empList.stream().collect(Collectors.groupingBy(emp->emp.getAge()));
+		System.out.println(collect);
 		List<String> charList= Arrays.asList("apple".split("")); 
 //		Map<Employee, Long> collect = empList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 //		System.out.println(collect);
-		Map<String, Long> collect = charList.stream().collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
-		System.out.println(collect);
+		Map<String, Long> collect1 = charList.stream().collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
+		System.out.println(collect1);
 	}
 }

@@ -30,6 +30,38 @@ public class Merge2List {
 
         // Display the merged list
 //        System.out.println("Merged List: " + mergedList1);
+        
+        int[] arr1 = {2,5,6,8};
+        int[] arr2 = {1,3,4,5,6};
+        
+        int i=0;
+        int j=0;
+        List<Integer> list = new ArrayList<>();
+        while(i<arr1.length && j<arr2.length) {
+        	if(arr1[i] < arr2[j]) {
+        		list.add(arr1[i++]);
+        	} else if(arr1[i] > arr2[j]) {
+        		list.add(arr2[j++]);
+        	} else {
+        		list.add(arr1[i]);
+        		i++;
+        		j++;
+        	}
+        }
+        
+        if(i<arr1.length) {
+        	while(i<arr1.length) {
+        		list.add(arr1[i++]);
+        	}
+        }
+        
+        if(j<arr2.length) {
+        	while(j<arr2.length) {
+        		list.add(arr2[j++]);
+        	}
+        }
+        
+        System.out.println("list:::::"+list);
     }
 }
 

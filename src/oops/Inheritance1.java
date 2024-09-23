@@ -2,12 +2,18 @@ package oops;
 
 class Parent {
 	public void m1() {
-		System.out.println("Parent");
+		System.out.println("Parent-1");
+	}
+	public void m3() {
+		System.out.println("Parent-2");
 	}
 }
 class Child extends Parent{
 	public void m2() {
-		System.out.println("Child");
+		System.out.println("Child-1");
+	}
+	public void m3() {
+		System.out.println("Child-2");
 	}
 }
 public class Inheritance1 {
@@ -22,6 +28,7 @@ public class Inheritance1 {
 		
 		Parent p1 = new Child();
 		p1.m1();
+		p1.m3();
 		
 //		Child c1 = (Child) new Parent();
 //		c1.m1();

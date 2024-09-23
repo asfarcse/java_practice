@@ -13,7 +13,7 @@ public class Application {
 		Person d = new Person("hamza",20);
 		
 		List<Person> personList = Arrays.asList(a,b,c,d);
-		personList.forEach(System.out::println);
+		//personList.forEach(System.out::println);
 		personList.stream().map(person->person.getAge()).forEach(System.out::println);
 		personList.stream().map(Person::getAge).forEach(System.out::println);
 	}

@@ -20,7 +20,6 @@ public class Employee implements Comparable<Employee>{
 	}
 	public Employee() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Employee(int id, String name) {
 		super();

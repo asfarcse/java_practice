@@ -4,22 +4,20 @@ import java.util.stream.IntStream;
 
 public class IsPrimeNumber {
 	public static void main(String[] args) {
-		System.out.println(isPrime(2));
-		System.out.println(isPrime(3));
-		System.out.println(isPrime(4));
-		System.out.println(isPrime(5));
-		System.out.println(isPrime(6));
-		
+		int[] arr = { 22, 8, 56, 5, 46, 46, 99, 37, 99, 5 };
+		for (Integer e : arr) {
+			System.out.println(checkPrime(e));
+		}
 	}
-	public static Boolean isPrime(int num) {
+
+	private static String checkPrime(int num) {
 		int count = 1;
-		for(int i=1;i<num;i++) {
-			if(num%i==0) {
+		for (int i = 2; i <= num; i++) {
+			if (num % i == 0) {
 				count++;
 			}
 		}
-//		System.out.println("count"+count);
-		return count==2?true:false;
-//		return IntStream.range(2, num).noneMatch(n->num%n==0);
+
+		return count == 2 ? "True" : "False";
 	}
 }

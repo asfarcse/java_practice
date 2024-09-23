@@ -20,7 +20,7 @@ class Person {
 public class TypesOfFunctionInterface {
 	public static void main(String[] args) {
 		//Predicate type---boolean result
-		Predicate<String> predicate = str -> str.length()>5;
+		Predicate<String> predicate = str-> str.length()>5;
 		System.out.println(predicate.test("asfarr"));
 		
 		//consumer--modifiesData, no output

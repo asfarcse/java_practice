@@ -52,6 +52,6 @@ public class HiddenFeaturesByJavaTechie {
 		empList.stream()
 			.mapToDouble(Employee::getSalary)
 				.boxed()
-					.collect(Collectors.collectingAndThen(null, null))
+					.collect(Collectors.collectingAndThen(null, null));
 	}
 }

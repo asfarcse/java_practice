@@ -9,7 +9,7 @@ public class MaxElement {
 	public static void findMaxElement(int[] arr) {
 		int max=arr[0];
 		for(Integer i:arr) {
-			if(max < i) {
+			if(i > max) {
 				max=i;
 			}
 		}

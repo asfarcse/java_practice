@@ -11,6 +11,7 @@ public class CountVowelInString {
 		long count = asList.stream().filter(p -> p.equalsIgnoreCase("a") || p.equalsIgnoreCase("e")
 				|| p.equalsIgnoreCase("i") || p.equalsIgnoreCase("o") || p.equalsIgnoreCase("u")).count();
 		System.out.println(count);
+		
 		int charCount = 0;
 		for (int i = 0; i < asList.size(); i++) {
 			switch (asList.get(i)) {

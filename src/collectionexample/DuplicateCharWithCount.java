@@ -5,13 +5,12 @@ import java.util.Map;
 
 class GetCharWithCount {
 	public static Map<Character, Integer> getCharWithCount(String str) {
-		char[] charArray = str.toCharArray();
-		Map<Character, Integer> map = new HashMap<>();
-		for (Character c : charArray) {
-			if (map.containsKey(c)) {
-				map.put(c, map.get(c) + 1);
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(Character ch:str.toCharArray()) {
+			if(!map.containsKey(ch)) {
+				map.put(ch, 1);
 			} else {
-				map.put(c, 1);
+				map.put(ch,map.get(ch)+1);
 			}
 		}
 		return map;

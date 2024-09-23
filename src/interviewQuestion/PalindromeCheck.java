@@ -11,14 +11,12 @@ public class PalindromeCheck {
 	}
 	
 	public static Boolean checkForPalindrom(String str) {
-		boolean result = true;
 		Integer length = str.length();
-		for(int i=0;i<=length/2-1;i++) {
+		for(int i=0;i<=length/2;i++) {
 			if(str.charAt(i) != str.charAt(str.length()-1-i)) {
-				result = false;
-				break;
+				return false;
 			}
 		}
-		return result;
+		return true;
 	}
 }

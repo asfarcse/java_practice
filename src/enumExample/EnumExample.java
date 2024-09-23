@@ -1,5 +1,6 @@
 package enumExample;
 
+import enumExample.Student.Mode;
 
 class Student {
 	
@@ -53,7 +54,7 @@ class Student {
 
 public class EnumExample {
 	public static void main(String[] args) {
-		Student student1 = new Student(1, "Alice", Student.Mode.REGULAR);
+		Student student1 = new Student(1, "Alice",Student.Mode.REGULAR);
         Student student2 = new Student(2, "Bob", Student.Mode.PRIVATE);
         
         System.out.println(student1.getMode());

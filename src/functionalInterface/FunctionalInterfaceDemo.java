@@ -19,7 +19,7 @@ class Person1 {
 	
 }
 
-public class Demo {
+public class FunctionalInterfaceDemo {
 	public static void main(String[] args) {
 		
 		// Predicate: Takes one argument and returns a boolean

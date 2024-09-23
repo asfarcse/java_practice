@@ -1,15 +1,11 @@
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Person {
 
@@ -85,10 +81,8 @@ public class Hello {
 		Collections.reverse(asList2);
 
 		// Reverse each character and collect the results into a new list
-	String collect2 = asList2.stream().collect(Collectors.joining());
+		String collect2 = asList2.stream().collect(Collectors.joining());
 
-		
-		
 		System.out.println(collect2);
 
 	}
